@@ -7,19 +7,21 @@
 body {
   height: 100vh;
   padding-top: 200px;
-  background-color: cadetblue;
+  background-color: rgb(0, 0, 0);
+  min-height: 100vh;
 }
 
 .box {
-  margin: 0 auto;
-  width: 100px;
+  width: 100%;
   max-width: 500px;
+  margin: 0 auto;
 }
 .box label {
   display: block;
+  /* border: 1px solid rgb(255, 251, 251); */
   width: 150px;
   height: 30px;
-  background: rgb(43, 40, 0);
+  background: rgb(88, 81, 81);
   cursor: pointer;
   position: relative;
   border-radius: 15px;
@@ -29,5 +31,41 @@ body {
 .box label::after {
   content: "";
   display: block;
-  width: 50px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgb(253, 250, 250);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border: 1px solid rgb(228, 227, 227);
+  box-shadow: 0 0 5px whitesmoke;
+  transition: left 1ms ease-in-out;
+}
+
+input:checked ~ label {
+  background: rgb(17, 238, 1);
+}
+
+input:checked ~ label:after {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(17, 238, 1);
+  left: 120px;
+}
+
+.box input {
+  display: none;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3vw;
+  color: white;
+  padding: 100px;
+  font-style: italic;
+  margin-top: 20px; /* Espace supplémentaire pour un rendu aéré */
+  text-align: center; /* Centrage horizontal */
+  font-family: Arial, Helvetica, sans-serif;
 }
